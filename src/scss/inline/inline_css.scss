@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+/*
+* inline_css.css
+*
+*/
+
+@import "../config/config";
+@import "../override/override";
+
+
+/* --------------------------------
+  inline_css
+-------------------------------- */
+.l-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.l-loading {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: $color-white;
+  transition: all $main-ease-time $main-ease 0.1s;
+  z-index: 10;
+}
+.l-loader,
+.l-loader:after {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+}
+.l-loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  font-size: 10px;
+  text-indent: -9999em;
+  border-top: 0.5rem solid #eee;
+  border-right: 0.5rem solid #eee;
+  border-bottom: 0.5rem solid #eee;
+  border-left: 0.5rem solid #656468;
+  transform: translateZ(0);
+  animation: load 0.8s infinite linear;
+}
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

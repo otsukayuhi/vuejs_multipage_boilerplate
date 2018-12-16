@@ -1,0 +1,40 @@
+extend /layouts/default
+append variables
+  -
+    // page settings
+    const PAGE = 'top'; // global/_conf.pug のページを指定
+    const P_NAME = 'top'; // body.page-{P_NAME} こんな感じにもなる
+    const P_IMG_PATH = `${CONF_IMG_PATH}${P_NAME}/`;
+
+block css
+  link(href=`/assets/css/${P_NAME}.css`, rel="preload", as="style", onload="this.onload=null;this.rel='stylesheet'")
+  noscript: link(href=`/assets/css/${P_NAME}.css`, rel="stylesheet")
+
+block content
+  .l-main
+    .top-Mv
+      //- picture要素用mixin
+      +myPicture(P_IMG_PATH, '_dummy', 'jpg')
+
+  .l-section
+    h2.l-section-ttl Top Page
+
+    ul.top-List
+      -
+        const LIST = [
+          {alt: '邪気眼'},
+          {alt: '鳥'},
+          {alt: '二世'},
+          {alt: '相打ち'},
+          {alt: 'マッド・サイエンティスト'},
+          {alt: 'ガチャ'}
+        ];
+
+      each item, i in LIST
+        //- 画像遅延読み込み
+        //- https://github.com/aFarkas/lazysizes
+        li.top-Item
+          img.lazyload(data-src=`${P_IMG_PATH}lazy_00${i+1}.png`, alt=item.alt)
+
+block script
+  script(src=`/assets/js/${P_NAME}.js`, defer)

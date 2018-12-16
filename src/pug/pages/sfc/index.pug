@@ -1,0 +1,13 @@
+extend /layouts/vuepage
+append variables
+  -
+    // page settings
+    const PAGE = 'sfc'; // global/_conf.pug のページを指定
+    const P_NAME = 'sfc'; // body.page-{P_NAME} こんな感じにもなる
+
+block css
+  link(href=`/assets/css/${P_NAME}.css`, rel="preload", as="style", onload="this.onload=null;this.rel='stylesheet'")
+  noscript: link(href=`/assets/css/${P_NAME}.css`, rel="stylesheet")
+
+block script
+  script(src=`/assets/js/${P_NAME}.js`, defer)

@@ -1,0 +1,21 @@
+//- global settings
+include /global/global
+block variables
+
+doctype html
+html(lang="ja")
+  head
+    <!--#include virtual="/assets/include/analytics.html" -->
+    include ./_meta
+
+  body#body(class=`page-${P_NAME}`)
+    .l-loading#l-loading
+      .l-loader 読み込み中
+    .l-container#l-container
+      c-header
+
+      //- page/ のPugファイルで上書き
+      block content
+
+      c-footer
+    include ./_script

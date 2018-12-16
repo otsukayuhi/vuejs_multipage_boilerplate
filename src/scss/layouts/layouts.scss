@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/*
+* layout
+*
+*/
+
+/* ------------------------
+  loading
+------------------------ */
+.l-loading {
+  &[aria-hidden="true"] {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ------------------------
+  main
+------------------------ */
+.l-main {}
+
+.l-section {
+  padding: 20px;
+  @include breakpoint-up(lg) {
+    margin: 0 auto;
+    padding: 40px 0;
+    width: 1000px;
+  }
+}
+
+.l-section-ttl {
+  font-size: 2rem;
+}

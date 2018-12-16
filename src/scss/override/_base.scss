@@ -1,0 +1,51 @@
+/* ------------------------
+  Base Settings
+------------------------ */
+html {
+  font-size: 2.66666666666vw;
+
+  @include max-screen(375px) {
+    font-size: $base-font-size;
+  }
+
+  @include screen(415px, 939px) {
+    font-size: 13px;
+  }
+
+  @include breakpoint-up(lg) {
+    font-size: $base-font-size;
+  }
+}
+
+body {
+  background-color: $base-background-color;
+  color: $base-font-color;
+  -webkit-font-smoothing: $font-smoothing;
+  font-smoothing: $font-smoothing;
+  font-family: $base-font-family;
+  -webkit-text-size-adjust: 100%;
+  line-height: $base-line-height;
+  word-wrap: break-word;
+  min-width: 320px;
+  font-size: 1.4rem;
+
+  @include breakpoint-up(lg) {
+    min-width: 940px;
+    font-size: 1.6rem;
+  }
+}
+
+a {
+  color: $base-link-color-link;
+  text-decoration: $base-link-text_decoration-default;
+
+  &[href^="tel:"] {
+    &:hover {
+      color: $base-link-color-link;
+    }
+    @include breakpoint-up(md) {
+      text-decoration: $base-link-text_decoration-hover;
+      cursor: text;
+    }
+  }
+}

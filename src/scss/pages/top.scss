@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+/*
+* top.css
+*
+*/
+
+
+/* --------------------------------
+  top
+-------------------------------- */
+/* section ------- */
+.top-Mv {
+  img {
+    width: 100%;
+  }
+}
+
+.top-List {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  @include breakpoint-up(lg) {
+    margin-top: 40px;
+  }
+}
+.top-Item {
+  width: 48%;
+  border-radius: 10px;
+  box-shadow:0px 0px 6px 3px #eee;
+  @include breakpoint-up(lg) {
+    width: 300px;
+  }
+
+  &:nth-child(n+3) {
+    margin-top: 20px;
+    @include breakpoint-up(lg) {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(n+4) {
+    @include breakpoint-up(lg) {
+      margin-top: 20px;
+    }
+  }
+}

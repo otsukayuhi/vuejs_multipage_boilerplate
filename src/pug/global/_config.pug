@@ -1,0 +1,31 @@
+-
+  /*
+    const CONF_{NAME}  グローバル定数
+    const P_{NAME}     ページ用定数
+    const C_{NAME}     コンポーネント用定数
+  */
+
+  //- global settings
+  const CONF_UPDATE_OG = '180914'; // OG画像変更時、パラメータも変えること！
+  const CONF_ABSOLUTE_PATH = 'http://example.com'; // 絶対パス
+  const CONF_IMG_PATH = '/assets/img/';
+  const CONF_SVG_PATH = `${CONF_IMG_PATH}svg-sprite/sprite.svg`;
+
+  //- myPicture mixin settings
+  const CONF_MEDIA = 'min'; // 'min' -> 'min-width' 'max' -> 'max-width'
+  const CONF_MEDIA_WIDTH = [768]; // breakpoints
+  const CONF_PER_EXTENSIONS = ['_sm', '_lg']; // xxx_sm.jpg xxx_lg.jpg
+
+  //- page settings
+  const CONF = {
+    "top" : {
+      "title": "トップタイトル",
+      "description": "トップディスクリプション",
+      "relativePath": "/"
+    },
+    "sfc" : {
+      "title": "SFCタイトル",
+      "description": "SFCディスクリプション",
+      "relativePath": "/sfc/"
+    }
+  };
